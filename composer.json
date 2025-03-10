@@ -1,5 +1,5 @@
 {
-    "name": "qferr/mjml-php",
+    "name": "kumi/mjml-php",
     "description": "A simple PHP library to render MJML to HTML.",
     "type": "library",
     "license": "MIT",
@@ -7,6 +7,10 @@
         {
             "name": "Quentin",
             "email": "qferrer@outook.com"
+        },
+        {
+            "name": "Kumi",
+            "email": "mjml-php@kumi.email"
         }
     ],
     "require": {

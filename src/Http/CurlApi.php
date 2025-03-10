@@ -18,7 +18,7 @@ final class CurlApi implements ApiInterface
     protected $credentials;
     protected $curl;
 
-    public function __construct(string $appId, string $secretKey, ?CurlInterface $curl = null)
+    public function __construct(string $appId, string $secretKey, ?CurlInterface $curl = null, ?string $apiEndpoint = null)
     {
         if (!\extension_loaded('curl')) {
             throw new \LogicException(sprintf(
@@ -31,6 +31,7 @@ final class CurlApi implements ApiInterface
         $this->secretKey = $secretKey;
         $this->credentials = base64_encode("$appId:$secretKey");
         $this->curl = $curl ?? new Curl();
+        $this->apiEndpoint = $apiEndpoint ?? $this->apiEndpoint;
     }
 
     public function getHtml(string $mjml): string
